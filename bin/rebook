@@ -1,0 +1,14 @@
+#!/usr/bin/perl -ws
+use strict; use warnings;
+
+use UMinho::BGUM::Rebook;
+my $rb = UMinho::BGUM::Rebook->new;
+$rb->load_config("/home/andrefs/.rebook/andrefs.ini");
+$rb->login;
+
+$rb->status;
+
+my $exit = $rb->renew;
+$rb->publish($exit);
+
+
